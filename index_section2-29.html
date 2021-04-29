@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="vue.js"></script>
+  <div id="app">
+      <h1 :class="classObject">Hello</h1>
+      <button @click="isActive = !isActive">切り替え</button>
+  </div>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        isActive: true
+      },
+      computed: {
+        classObject: function() {
+          return {
+            red: this.isActive,
+            'bg-blue': !this.isActive
+          }
+        }
+      }
+    })
+  </script>
+
+  <style>
+    @import "./index_section2-29.css";
+  </style>
+</body>
+
+</html>
